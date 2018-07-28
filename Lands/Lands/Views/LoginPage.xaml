@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lands.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,20,10,20">
+                <Label Text="iLaCuesta" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
+                <Image Source="onu" WidthRequest="200"/>
+                <Grid Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="E-Mail" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                    <Entry Keyboard="Email" Placeholder="Introduce tu email" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Password" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                    <Entry IsPassword="True" Placeholder="Introduce tu contraseña" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Recuérdame en este móvil" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                    <Switch HorizontalOptions="End"/>
+                </StackLayout>
+                <ActivityIndicator/>
+                <StackLayout Margin="40,0">
+                    <Button Text="Login" BackgroundColor="Navy" TextColor="White" BorderRadius="20" HeightRequest="46"/>
+                    <Button Text="Register" BackgroundColor="Purple" TextColor="White" BorderRadius="20" HeightRequest="46"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="facebook_logo" WidthRequest="50"/>
+                    <Image Source="twitter_logo" WidthRequest="50"/>
+                    <Image Source="instagram_logo" WidthRequest="50"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
