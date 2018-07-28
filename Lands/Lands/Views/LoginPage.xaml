@@ -19,11 +19,12 @@
                     <Label Text="Password" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
                     <Entry IsPassword="True" Placeholder="Introduce tu contraseña" Grid.Row="1" Grid.Column="1"/>
                 </Grid>
+                <ActivityIndicator/>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Recuérdame en este móvil" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
                     <Switch HorizontalOptions="End"/>
                 </StackLayout>
-                <ActivityIndicator/>
+                <Label Text="Olvidé la contraseña" HorizontalOptions="Center" TextColor="Blue"/>
                 <StackLayout Margin="40,0">
                     <Button Text="Login" BackgroundColor="Navy" TextColor="White" BorderRadius="20" HeightRequest="46"/>
                     <Button Text="Register" BackgroundColor="Purple" TextColor="White" BorderRadius="20" HeightRequest="46"/>
