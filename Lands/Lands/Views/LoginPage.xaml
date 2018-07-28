@@ -7,9 +7,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="5">
-                <Label Text="iLaCuesta" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
-                <Image Source="onu" WidthRequest="200"/>
-                <Grid Margin="10,0">
+                <Label Text="iLaCuesta" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Image Source="onu" WidthRequest="200" VerticalOptions="CenterAndExpand"/>
+                <Grid Margin="10,0,0,0" VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -19,17 +19,17 @@
                     <Label Text="Password" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
                     <Entry IsPassword="True" Placeholder="Introduce tu contraseña" Grid.Row="1" Grid.Column="1"/>
                 </Grid>
-                <ActivityIndicator/>
-                <StackLayout Orientation="Horizontal" Margin="10,0">
+                <ActivityIndicator VerticalOptions="CenterAndExpand"/>
+                <StackLayout Orientation="Horizontal" Margin="10,0" VerticalOptions="CenterAndExpand">
                     <Label Text="Recuérdame en este móvil" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
                     <Switch HorizontalOptions="End"/>
                 </StackLayout>
-                <Label Text="Olvidé la contraseña" HorizontalOptions="Center" TextColor="Blue"/>
-                <StackLayout Orientation="Horizontal" Margin="15,0">
+                <Label Text="Olvidé la contraseña" HorizontalOptions="Center" TextColor="Blue" VerticalOptions="CenterAndExpand"/>
+                <StackLayout Orientation="Horizontal" Margin="15,0" VerticalOptions="CenterAndExpand">
                     <Button Text="Login" BackgroundColor="Navy" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand"/>
                     <Button Text="Register" BackgroundColor="Purple" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
                     <Image Source="facebook_logo" WidthRequest="68"/>
                     <Image Source="twitter_logo" WidthRequest="55"/>
                     <Image Source="instagram_logo" WidthRequest="50"/>
