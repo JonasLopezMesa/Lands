@@ -26,8 +26,8 @@
                 </StackLayout>
                 <Label Text="Olvidé la contraseña" HorizontalOptions="Center" TextColor="Blue" VerticalOptions="CenterAndExpand"/>
                 <StackLayout Orientation="Horizontal" Margin="15,0" VerticalOptions="CenterAndExpand">
-                    <Button Text="Login" BackgroundColor="Navy" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}"/>
-                    <Button Text="Register" BackgroundColor="Purple" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand" Command="{Binding RegisterCommand}"/>
+                    <Button Text="Login" BackgroundColor="Navy" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
+                    <Button Text="Register" BackgroundColor="Purple" TextColor="White" BorderRadius="20" HeightRequest="46" HorizontalOptions="FillAndExpand" Command="{Binding RegisterCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
                     <Image Source="facebook_logo" WidthRequest="68"/>
