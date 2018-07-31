@@ -31,6 +31,103 @@
                     Message = "Check you internet connection.",
                 };
             }
+            return new Response
+            {
+                IsSuccess = true,
+                Message = "OK",
+            };
+        }
+        public async Task<TokenResponse> GetToken(
+            string urlBase,
+            string username,
+            string password)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var response = await client.PostAsync("Token",
+                    new StringContent(string.Format(
+                        "grant_type=password&username={0}&password={1}",
+                        username, password),
+                        Encoding.UTF8, "application/x-www-form-urlencoded"));
+                var resultJSON = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<TokenResponse>(
+                    resultJSON);
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public async Task<Response> Get<T>(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            string tokenType,
+            string accessToken,
+            int id)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue(tokenType, accessToken);
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format(
+                    "{0}{1}/{2}",
+                    servicePrefix,
+                    controller,
+                    id);
+                var response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = response.StatusCode.ToString(),
+                    };
+                }
+                var result = await response.Content.ReadAsStringAsync();
+                var model = JsonConvert.DeserializeObject<T>(result);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Ok",
+                    Result = model,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<Response> GetList<T>(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            string tokenType,
+            string accessToken)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue(tokenType, accessToken);
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format("{0}{1}", servicePrefix, controller);
+                var response = await client.GetAsync(url);
+                var result = await response.Content.ReadAsStringAsync();
+                if (!)
+                {
+
+                }
+            }
         }
     }
 }
